@@ -1,0 +1,4 @@
+rootProject.name = 'example-multi'
+
+include "bar:hoge"
+include "foo:bar"
