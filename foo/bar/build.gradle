@@ -1,4 +1,6 @@
 plugins {
+    id 'org.springframework.boot' version '2.3.3.RELEASE'
+    id 'io.spring.dependency-management' version '1.0.10.RELEASE'
     id 'java'
 }
 
@@ -12,9 +14,11 @@ repositories {
 }
 
 dependencies {
+    implementation project(':bar:hoge')
+    implementation 'org.springframework.boot:spring-boot-starter'
+    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
     testCompile group: 'junit', name: 'junit', version: '4.12'
 }
-
-task hello(type: GradleBuild) {
-    tasks = ['build']
+bootJar {
+    mainClassName = 'com.example.koji.Main'
 }
